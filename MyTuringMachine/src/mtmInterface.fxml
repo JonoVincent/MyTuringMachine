@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
+   <children>
+      <TextArea fx:id="codeInputBox" layoutX="335.0" layoutY="100.0" prefHeight="300.0" prefWidth="900.0" />
+      <TextArea fx:id="codeOutputBox" editable="false" layoutX="335.0" layoutY="450.0" prefHeight="300.0" prefWidth="900.0" wrapText="true" />
+      <ImageView fitHeight="70.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@My_Turing_Machine_Logo_Long.png" />
+         </image>
+      </ImageView>
+      <ButtonBar layoutX="229.0" maxHeight="70.0" maxWidth="1.7976931348623157E308" nodeOrientation="RIGHT_TO_LEFT" prefHeight="70.0" prefWidth="1500.0">
+         <padding>
+            <Insets bottom="20.0" left="50.0" right="106.0" top="20.0" />
+         </padding>
+         <buttons>
+            <CheckBox fx:id="textOutputCheckBox" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#textOutputCheckBoxHandler" text="Text Output" />
+            <Button fx:id="fastForwardButton" mnemonicParsing="false" onAction="#fastForwardButtonHandler" text="x1 Speed" />
+            <Button fx:id="stepButton" mnemonicParsing="false" onAction="#stepButtonHandler" text="Step Code" />
+            <Button mnemonicParsing="false" onAction="#stopButtonHandler" text="Stop" textAlignment="CENTER" />
+            <Button fx:id="runButton" mnemonicParsing="false" onAction="#runButtonHandler" text="Run" textAlignment="CENTER" />
+         </buttons>
+      </ButtonBar>
+      <Accordion layoutY="70.0" prefHeight="700.0" prefWidth="300.0">
+        <panes>
+          <TitledPane animated="false" text="Straight Flush">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea editable="false" prefHeight="600.0" prefWidth="300.0" text="Write a TM that will order a suit of cards into ascending order. Use the alphabet: 1,2,3,4,5,6,7,8,9,10,j,q,k,a." wrapText="true" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Lphbetic Nomly">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="299.0">
+                     <children>
+                        <TextArea editable="false" prefHeight="600.0" prefWidth="300.0" text="Write a TM that removes all of the a's from a tape. You can use as large an alphabet as you like, but the large it is the larger the TM will be.  " wrapText="true" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Sdrawkcab Ti Daer">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea editable="false" prefHeight="600.0" prefWidth="300.0" text="Write a TM that reverse a tape. For this you can use any alphabet you like but 1,0 is suggested." wrapText="true" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+            <TitledPane animated="false" text="Caesar's Secret">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea editable="false" prefHeight="600.0" prefWidth="300.0" text="Write a TM that encrypts the tape with a caesar cipher shift of your choice. You can use any alphabet consisting of 3 more symbols. " wrapText="true" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Authorised Comedy">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea editable="false" prefHeight="600.0" prefWidth="300.0" text="Write a TM which when given a pre-determined password tells a joke." wrapText="true" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+        </panes>
+      </Accordion>
+      <Label fx:id="tapeOutputLabel" layoutX="335.0" layoutY="406.0" prefHeight="18.0" prefWidth="901.0" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
