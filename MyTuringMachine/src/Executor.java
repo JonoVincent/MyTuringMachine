@@ -41,7 +41,6 @@ public class Executor{
         while(currentState != trueState && currentState != falseState ){
             executeState();
         }
-        System.out.println("Completed");
         
     }
     /*This method executes a single state
@@ -56,9 +55,14 @@ public class Executor{
         //loops through instructions, finds the correct instruction and performs it
         int i = 0;
         String[] currentInstruction = instructionList[i].split(",");
-        while(!(currentInstruction[0].equals(tape.get(headIndex + headIndexMod)))){
+        while((!(currentInstruction[0].equals(tape.get(headIndex + headIndexMod))))){
             i++;
-            currentInstruction = instructionList[i].split(",");
+            //Temporary code fix whilst error checker underdevelopement!!!!!!!!!!!!!!!!!!!!!!!!
+            if(i >= instructionList.length){
+                currentInstruction = new String[]{"Empty","Empty","None","-2"};
+            }else{
+                currentInstruction = instructionList[i].split(",");
+            }
         }
         executeInstruction(currentInstruction);
     }

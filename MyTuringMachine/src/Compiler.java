@@ -141,7 +141,6 @@ public class Compiler {
             }
             stateExecutorCode = stateExecutorCode + instructionCode;
         }
-        System.out.println(stateExecutorCode);
         return(stateExecutorCode);
     }
 
